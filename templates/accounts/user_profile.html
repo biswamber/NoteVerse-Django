@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card shadow">
+
+    <div class="card-body text-center">
+
+        <h2>👤 {{ profile_user.username }}</h2>
+
+        <p>{{ profile_user.email }}</p>
+
+        <div class="row mt-4">
+
+            <div class="col">
+
+                <h3>{{ total_notes }}</h3>
+
+                <p>Notes</p>
+
+            </div>
+
+            <div class="col">
+
+                <h3>{{ total_likes }}</h3>
+
+                <p>Likes</p>
+
+            </div>
+
+            <div class="col">
+
+                <h3>{{ profile_user.followers.count }}</h3>
+
+                <p>Followers</p>
+
+            </div>
+
+            <div class="col">
+
+                <h3>{{ profile_user.following.count }}</h3>
+
+                <p>Following</p>
+
+            </div>
+
+        </div>
+
+        {% if user != profile_user %}
+
+        <a href="{% url 'toggle_follow' profile_user.username %}"
+           class="btn btn-primary mt-3">
+
+            Follow / Unfollow
+
+        </a>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+<hr>
+
+<h3>Recent Notes</h3>
+
+{% for note in notes %}
+
+<div class="card mb-3">
+
+    <div class="card-body">
+
+        <h5>{{ note.title }}</h5>
+
+        <p>{{ note.content }}</p>
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<p>No Notes Yet</p>
+
+{% endfor %}
+
+{% endblock %}

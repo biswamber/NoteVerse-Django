@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card shadow">
+
+<div class="card-body">
+
+<h2>
+
+{{ user.username }}
+
+</h2>
+
+<hr>
+
+<p>
+
+<strong>Email:</strong>
+
+{{ user.email }}
+
+</p>
+
+<p>
+
+<strong>Total Notes:</strong>
+
+{{ total_notes }}
+
+</p>
+
+<p>
+
+<strong>Total Likes:</strong>
+
+{{ total_likes }}
+
+</p>
+
+<p>
+
+<strong>Joined:</strong>
+
+{{ user.date_joined }}
+
+</p>
+
+</div>
+
+</div>
+
+{% endblock %}
