@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+<h2 class="mb-4">
+
+🔔 Notifications
+
+</h2>
+
+{% for notification in notifications %}
+
+<div class="card mb-3 {% if not notification.is_read %}border-primary{% endif %}">
+
+<div class="card-body">
+
+{% if notification.notification_type == "LIKE" %}
+
+<strong>{{ notification.sender.username }}</strong>
+
+liked your note
+
+<strong>{{ notification.note.title }}</strong>
+
+{% elif notification.notification_type == "COMMENT" %}
+
+<strong>{{ notification.sender.username }}</strong>
+
+commented on your note
+
+<strong>{{ notification.note.title }}</strong>
+
+{% elif notification.notification_type == "FOLLOW" %}
+
+<strong>{{ notification.sender.username }}</strong>
+
+started following you.
+
+{% endif %}
+
+<br>
+
+<small class="text-muted">
+
+{{ notification.created_at }}
+
+</small>
+
+</div>
+
+</div>
+
+{% empty %}
+
+<div class="alert alert-info">
+
+No notifications yet.
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,1 @@
+web: gunicorn NoteVerse_Django.wsgi

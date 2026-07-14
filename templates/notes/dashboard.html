@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">
+        📊 Dashboard
+    </h2>
+
+    <div class="row">
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow text-center p-4">
+                <h3>{{ total_notes }}</h3>
+                <p>Total Notes</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow text-center p-4">
+                <h3>{{ total_views }}</h3>
+                <p>Total Views</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow text-center p-4">
+                <h3>{{ total_likes }}</h3>
+                <p>Total Likes</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow text-center p-4">
+                <h3>{{ total_bookmarks }}</h3>
+                <p>Saved Notes</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow text-center p-4">
+                <h3>{{ followers }}</h3>
+                <p>Followers</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow text-center p-4">
+                <h3>{{ following }}</h3>
+                <p>Following</p>
+            </div>
+        </div>
+
+    </div>
+
+    <hr class="my-5">
+
+    <h3 class="mb-4">
+        📈 Analytics
+    </h3>
+
+    <div class="row">
+
+        <div class="col-lg-8 mx-auto">
+
+            <canvas id="statsChart"></canvas>
+
+        </div>
+
+    </div>
+    <hr class="my-5">
+
+<h3 class="mb-4">
+    📅 Recent Notes
+</h3>
+
+<div class="card shadow">
+
+    <ul class="list-group list-group-flush">
+
+        {% for note in recent_notes %}
+
+        <li class="list-group-item d-flex justify-content-between">
+
+            <a href="{% url 'note_detail' note.id %}" class="text-decoration-none">
+
+                📝 {{ note.title }}
+
+            </a>
+
+            <small class="text-muted">
+
+                {{ note.created_at|naturaltime }}
+
+            </small>
+
+        </li>
+
+        {% empty %}
+
+        <li class="list-group-item">
+
+            No recent notes found.
+
+        </li>
+
+        {% endfor %}
+
+    </ul>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const ctx = document.getElementById("statsChart");
+
+new Chart(ctx, {
+
+    type: "bar",
+
+    data: {
+
+        labels: [
+
+            "Notes",
+
+            "Views",
+
+            "Likes",
+
+            "Bookmarks",
+
+            "Followers",
+
+            "Following"
+
+        ],
+
+        datasets: [{
+
+            label: "Your Statistics",
+
+            data: [
+
+                {{ total_notes }},
+
+                {{ total_views }},
+
+                {{ total_likes }},
+
+                {{ total_bookmarks }},
+
+                {{ followers }},
+
+                {{ following }}
+
+            ],
+
+            borderWidth: 1
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        scales: {
+
+            y: {
+
+                beginAtZero: true
+
+            }
+
+        }
+
+    }
+
+});
+
+</script>
+
+
+{% endblock %}

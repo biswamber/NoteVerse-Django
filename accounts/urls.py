@@ -22,4 +22,28 @@ urlpatterns = [
         views.toggle_follow,
         name="toggle_follow"
     ),
+    
+    path(
+    "edit-profile/",
+    views.edit_profile,
+    name="edit_profile",
+),
+
+path(
+    "notifications/",
+    views.notifications,
+    name="notifications",
+),
+
+path(
+    "followers/<str:username>/",
+    views.followers_list,
+    name="followers_list",
+),
+
+path(
+    "following/<str:username>/",
+    views.following_list,
+    name="following_list",
+),
 ]

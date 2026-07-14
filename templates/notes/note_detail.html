@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block content %}
+
+<div class="card shadow p-4">
+
+    <h2>{{ note.title }}</h2>
+
+    <p class="text-muted">
+        By {{ note.author.username }}
+        <small class="text-muted">
+
+🕒 {{ note.created_at|naturaltime }}
+
+</small>
+    </p>
+    <p class="text-muted">
+
+    👁 {{ note.views }} Views
+
+</p>
+
+    {% if note.image %}
+        <img
+            src="{{ note.image.url }}"
+            class="img-fluid rounded mb-3">
+    {% endif %}
+
+    <hr>
+
+    <p>
+        {{ note.content }}
+    </p>
+
+    <hr>
+
+    <!-- Comment Form -->
+
+    {% if user.is_authenticated %}
+
+    <form method="POST" action="{% url 'add_comment' note.id %}">
+
+        {% csrf_token %}
+
+        <input
+            type="hidden"
+            name="parent_id"
+            id="parent_id">
+
+        <div class="mb-3">
+
+            <textarea
+                name="content"
+                class="form-control"
+                rows="3"
+                placeholder="Write a comment..."
+                required></textarea>
+
+        </div>
+
+        <button class="btn btn-primary">
+
+            Post Comment
+
+        </button>
+
+    </form>
+
+    <hr>
+
+    {% endif %}
+
+    <h4 class="mb-3">
+
+        Comments
+
+    </h4>
+
+    {% for comment in comments %}
+
+        {% if not comment.parent %}
+
+        <div class="card mb-3">
+
+            <div class="card-body">
+
+                <strong>
+
+                    {{ comment.user.username }}
+
+                </strong>
+
+                <p class="mt-2">
+
+                    {{ comment.content }}
+
+                </p>
+
+                <a
+                    href="#"
+                    class="reply-btn text-decoration-none"
+                    data-id="{{ comment.id }}">
+
+                    Reply
+
+                </a>
+
+                <!-- Replies -->
+
+                {% for reply in comment.replies.all %}
+
+                <div class="ms-5 mt-3 border-start ps-3">
+
+                    <strong>
+
+                        {{ reply.user.username }}
+
+                    </strong>
+
+                    <p>
+
+                        {{ reply.content }}
+
+                    </p>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+    {% empty %}
+
+        <p>No comments yet.</p>
+
+    {% endfor %}
+
+</div>
+
+<script>
+
+document.querySelectorAll(".reply-btn").forEach(button => {
+
+    button.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        document.getElementById("parent_id").value = this.dataset.id;
+
+        document.querySelector("textarea").focus();
+
+        document.querySelector("textarea").placeholder =
+        "Replying to comment...";
+
+    });
+
+});
+
+</script>
+
+{% endblock %}

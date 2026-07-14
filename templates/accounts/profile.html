@@ -2,9 +2,23 @@
 
 {% block content %}
 
-<div class="card shadow">
+<div class="container mt-5">
+
+<div class="card shadow-lg border-0">
 
 <div class="card-body">
+
+<div class="row align-items-center">
+
+<div class="col-md-3 text-center">
+
+<img src="{{ user.profile.image.url }}"
+class="rounded-circle img-thumbnail"
+style="width:180px;height:180px;object-fit:cover;">
+
+</div>
+
+<div class="col-md-9">
 
 <h2>
 
@@ -12,11 +26,7 @@
 
 </h2>
 
-<hr>
-
-<p>
-
-<strong>Email:</strong>
+<p class="text-muted">
 
 {{ user.email }}
 
@@ -24,27 +34,117 @@
 
 <p>
 
-<strong>Total Notes:</strong>
+{{ user.profile.bio }}
+
+</p>
+
+<div class="row mt-4">
+
+<div class="col text-center">
+
+<h3>
 
 {{ total_notes }}
 
-</p>
+</h3>
 
-<p>
+<small>
 
-<strong>Total Likes:</strong>
+Notes
+
+</small>
+
+</div>
+
+<div class="col text-center">
+
+<h3>
 
 {{ total_likes }}
 
-</p>
+</h3>
 
-<p>
+<small>
 
-<strong>Joined:</strong>
+Likes
 
-{{ user.date_joined }}
+</small>
 
-</p>
+</div>
+
+<div class="col text-center">
+
+<h3>
+
+<a href="{% url 'followers_list' user.username %}">
+
+{{ user.followers.count }}
+
+</a>
+
+</h3>
+
+<small>
+
+Followers
+
+</small>
+
+</div>
+
+<div class="col text-center">
+
+<h3>
+
+<a href="{% url 'following_list' user.username %}">
+
+{{ user.following.count }}
+
+</a>
+
+</h3>
+
+<small>
+
+Following
+
+</small>
+
+</div>
+
+</div>
+
+<div class="mt-4">
+
+<a href="{% url 'edit_profile' %}"
+class="btn btn-warning">
+
+Edit Profile
+
+</a>
+
+<a href="{% url 'create_note' %}"
+class="btn btn-success">
+
+Create Note
+
+</a>
+
+<a
+href="{% url 'saved_notes' %}"
+class="btn btn-warning mt-3">
+
+⭐ Saved Notes
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 

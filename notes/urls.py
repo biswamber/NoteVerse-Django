@@ -38,4 +38,33 @@ name="toggle_like"
     name="add_comment"
 ),
 
+path(
+    "live-search/",
+    views.live_search,
+    name="live_search",
+),
+
+path(
+    "note/<int:note_id>/",
+    views.note_detail,
+    name="note_detail",
+),
+
+path(
+    "bookmark/<int:note_id>/",
+    views.toggle_bookmark,
+    name="toggle_bookmark",
+),
+path(
+    "saved-notes/",
+    views.saved_notes,
+    name="saved_notes",
+),
+
+path(
+    "dashboard/",
+    views.dashboard,
+    name="dashboard",
+),
+
 ]

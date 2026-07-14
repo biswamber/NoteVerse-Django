@@ -1,0 +1,671 @@
+body{
+
+    background:
+    radial-gradient(circle at top left,#e8f2ff 0%,transparent 30%),
+    radial-gradient(circle at top right,#fff2e6 0%,transparent 30%),
+    radial-gradient(circle at bottom,#f3ecff 0%,transparent 35%),
+    #f7f9fc;
+
+    min-height:100vh;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(12px);
+
+    border:none;
+
+    border-radius:22px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+}
+
+.btn{
+
+border-radius:12px;
+
+}
+
+.navbar{
+
+background:rgba(255,255,255,.88)!important;
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.4);
+
+}
+
+.btn{
+
+transition:.25s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.note-image{
+
+border-radius:18px;
+
+transition:.4s;
+
+}
+
+.note-image:hover{
+
+transform:scale(1.02);
+
+}
+
+.trending-card{
+
+background:linear-gradient(135deg,#ffffff,#fafbff);
+
+}
+
+h2{
+
+font-weight:700;
+
+letter-spacing:-1px;
+
+}
+
+body.dark-mode{
+
+background:
+
+radial-gradient(circle at top,#202733 0%,transparent 35%),
+
+#12151d!important;
+
+}
+
+img.rounded-circle{
+
+border:5px solid white;
+
+box-shadow:0 0 15px rgba(0,0,0,.15);
+
+}
+
+.card:hover{
+
+transform:translateY(-3px);
+
+transition:.25s;
+
+}
+
+/* ---------- DARK MODE ---------- */
+
+body.dark-mode{
+
+background:#121212 !important;
+
+color:white;
+
+}
+
+body.dark-mode .card{
+
+background:#1e1e1e;
+
+color:white;
+
+border:1px solid #333;
+
+}
+
+body.dark-mode .navbar{
+
+background:#000 !important;
+
+}
+
+body.dark-mode .dropdown-menu{
+
+background:#222;
+
+color:white;
+
+}
+
+body.dark-mode .dropdown-item{
+
+color:white;
+
+}
+
+body.dark-mode .dropdown-item:hover{
+
+background:#333;
+
+}
+
+body.dark-mode input{
+
+background:#2b2b2b;
+
+color:white;
+
+border-color:#444;
+
+}
+
+body.dark-mode textarea{
+
+background:#2b2b2b;
+
+color:white;
+
+}
+
+body.dark-mode .form-control{
+
+background:#2b2b2b;
+
+color:white;
+
+border-color:#444;
+
+}
+
+body.dark-mode a{
+
+color:#8ab4f8;
+
+}
+
+body.dark-mode .text-muted{
+
+color:#bbbbbb !important;
+
+}
+body.dark-mode {
+    background-color: black !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode a {
+    color: white !important;
+}
+
+/* ===========================
+   PREMIUM NAVBAR
+=========================== */
+
+.navbar{
+
+    background:#ffffff !important;
+
+    border-radius:18px;
+
+    margin:15px auto;
+
+    width:96%;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    padding:12px 22px;
+
+}
+
+.navbar-brand{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#222 !important;
+
+}
+
+.navbar .btn{
+
+    border-radius:12px;
+
+    height:42px;
+
+    padding:0 18px;
+
+    font-weight:500;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+.navbar .form-control{
+
+    height:44px;
+
+    border-radius:25px;
+
+    border:none;
+
+    background:#f3f5f7;
+
+    padding-left:18px;
+
+}
+
+.navbar .form-control:focus{
+
+    box-shadow:none;
+
+    background:#eef1f5;
+
+}
+
+.navbar img{
+
+    width:38px;
+
+    height:38px;
+
+    object-fit:cover;
+
+}
+
+.navbar .dropdown-menu{
+
+    border:none;
+
+    border-radius:16px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+body.dark-mode .navbar{
+
+    background:#1d1d1d !important;
+
+}
+
+body.dark-mode .navbar-brand{
+
+    color:white !important;
+
+}
+
+body.dark-mode .navbar .form-control{
+
+    background:#2c2c2c;
+
+    color:white;
+
+}
+
+body.dark-mode .navbar .form-control::placeholder{
+
+    color:#aaa;
+
+}
+/* ==========================
+   NOTEVERSE UI V2
+========================== */
+
+.note-card{
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+.note-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.10);
+
+}
+
+.note-title{
+
+    font-size:1.8rem;
+
+}
+
+.note-author{
+
+    color:#6c757d;
+
+    font-size:.95rem;
+
+}
+
+.note-author a{
+
+    color:#555;
+
+    font-weight:600;
+
+}
+
+.note-author a:hover{
+
+    color:#0d6efd;
+
+}
+/* Trending */
+
+.trending-card{
+
+    border:none;
+
+    border-radius:18px;
+
+    transition:.3s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.trending-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+
+}
+
+.trending-card h5{
+
+    min-height:60px;
+
+}
+
+.trending-card a{
+
+    color:#222;
+
+}
+
+.trending-card a:hover{
+
+    color:#0d6efd;
+
+}
+.note-content{
+
+    line-height:1.8;
+
+    font-size:15px;
+
+    color:#555;
+
+}
+.note-image{
+
+    width:100%;
+
+    height:350px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+}
+h2.mb-4{
+    margin-bottom:18px !important;
+    font-size:42px;
+    font-weight:700;
+}
+.note-content{
+
+    margin-top:8px !important;
+
+    margin-bottom:20px;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+}
+.post-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-top:15px;
+
+    margin-bottom:18px;
+
+    flex-wrap:wrap;
+
+}
+.post-actions .btn{
+
+    padding:6px 14px;
+
+    font-size:14px;
+
+    border-radius:25px;
+
+}
+.comment-form textarea{
+
+    min-height:45px;
+
+    resize:none;
+
+    border-radius:12px;
+
+}
+.comment-form button{
+
+    padding:7px 18px;
+
+    border-radius:25px;
+
+    font-size:14px;
+
+}
+/* ===========================
+   HEADER V2
+=========================== */
+
+.navbar{
+
+    padding:12px 24px;
+
+    border-radius:22px;
+
+}
+
+.navbar>.container-fluid{
+
+    display:flex;
+    align-items:center;
+}
+
+.navbar-brand{
+
+font-size:28px;
+
+font-weight:700;
+
+margin-right:20px;
+
+white-space:nowrap;
+
+}
+
+.navbar-brand img{
+
+    width:42px;
+
+    height:42px;
+}
+
+.navbar-actions{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+flex-shrink:0;
+
+}
+
+.navbar-actions .btn{
+
+height:44px;
+
+padding:0 16px;
+
+font-size:15px;
+
+border-radius:12px;
+
+}
+
+.navbar-actions .btn-primary{
+
+    min-width:130px;
+}
+
+.navbar-actions .btn-success{
+
+    min-width:110px;
+}
+
+.navbar-actions .btn-outline-danger{
+
+    min-width:110px;
+}
+
+.navbar-actions img{
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+}
+
+.navbar form{
+
+    width:100%;
+}
+
+.navbar input{
+
+   /* height:50px !important;*/
+
+    font-size:17px;
+}
+.navbar-actions .btn {
+    white-space: nowrap;
+    font-size: 18px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-btn{
+
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    border-radius:14px;
+
+    padding:6px 16px;
+
+    font-weight:600;
+
+    border:none;
+
+    background:white;
+
+}
+
+.profile-btn:hover{
+
+    background:#f5f5f5;
+
+}
+
+.profile-btn::after{
+
+    margin-left:10px;
+
+}
+
+.dropdown-menu{
+
+    border:none;
+
+    border-radius:16px;
+
+    min-width:220px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.dropdown-item{
+
+    padding:12px 18px;
+
+    font-weight:500;
+
+}
+
+.dropdown-item:hover{
+
+    background:#f5f7fb;
+
+}
+
+.navbar{
+    overflow: visible;
+}
+
+/* Navbar sabse upar rahe */
+.navbar{
+    position: relative;
+    z-index: 9999;
+    overflow: visible !important;
+}
+
+/* Dropdown navbar ke upar hi render ho */
+.dropdown-menu{
+    z-index: 10000 !important;
+    position: absolute;
+}
+
+.note-card{
+    position: relative;
+    z-index: 1;
+}
