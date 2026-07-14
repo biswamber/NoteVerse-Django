@@ -669,3 +669,11 @@ border-radius:12px;
     position: relative;
     z-index: 1;
 }
+.btn-outline-light{
+    color: #222 !important;
+    border-color: #ddd !important;
+}
+
+.btn-outline-light:hover{
+    color: #fff !important;
+}

@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-p)or=x19v+pxza6u_d#ufp--w_qxftrf+z=n+odk$3_ehx2)yb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "https://noteverse-jrkt.onrender.com/",
+]
 
 
 # Application definition
